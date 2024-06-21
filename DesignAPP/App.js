@@ -25,11 +25,12 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import SingletonScreen from './screens/SingletonScreen';
+import FactoryMethodScreen from './screens/FactoryMethodScreen';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 const App = ({navigation, route}) => {
   return (
     <GestureHandlerRootView>
-      <SingletonScreen/>
+      <FactoryMethodScreen/>
     </GestureHandlerRootView>
   );
 };
