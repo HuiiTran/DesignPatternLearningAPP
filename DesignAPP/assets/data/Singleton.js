@@ -1,6 +1,9 @@
 /* eslint-disable prettier/prettier */
 import SingletonImage from '../images/Singleton/singleton.png'
-
+import Characteristics from '../images/Singleton/Characteristics.png'
+import Motivation1 from '../images/Singleton/Motivation_1.png'
+import Motivation2 from '../images/Singleton/Motivation_2.png'
+import Motivation3 from '../images/Singleton/Motivation_3.png'
 export const Singleton_En = {
     Overview_1 : 'Singleton.',
     Overview_2 : 'Thuộc phân nhóm Creational patterns.',
@@ -10,7 +13,7 @@ export const Singleton_En = {
     Motivation_1: 'Cần duy nhất một instance của một class nào đó trong system.',
     Motivation_2: 'Cần truy cập, sử dụng instance này dễ dàng.',
     Motivation_3: 'window manager, Audio device, Printer spooler, những tài nguyên dùng chung (DB, file,...) chỉ cần dùng 1 instance mỗi lần được request.',
-    Characteristics_1: 'Dữliệu thành viên instance (private và static) là đối tượng duy nhất của lớp Singleton.',
+    Characteristics_1: 'Dữ liệu thành viên instance (private và static) là đối tượng duy nhất của lớp Singleton.',
     Characteristics_2: 'Constructor của lớp Singleton được định nghĩa thành protected hoặc private.',
     Characteristics_3: 'Phương thức getInstance() dùng để khởi tạo đối tượng duy nhất, định nghĩa thành public và static. Client chỉ dùng getInstance() để tạo đối tượng cho lớp Singleton.',
     Consequences_1: 'Đảm bảo truy cập vào duy nhất một instance.',
@@ -31,4 +34,8 @@ export const Singleton_En = {
     Reality_11: 'Bill Pugh Singleton',
     Reality_12: 'Tạo ra static nested class với vai trò 1 Helper khi muốn tách biệt chức năng cho 1 class function rõ ràng hơn.',
     Image_1: SingletonImage,
+    Image_2: Motivation1,
+    Image_3: Motivation2,
+    Image_4: Motivation3,
+    Image_5: Characteristics,
 }

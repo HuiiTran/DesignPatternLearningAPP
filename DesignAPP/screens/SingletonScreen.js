@@ -2,7 +2,7 @@
 import { View, Text, ScrollView, Image, TouchableOpacity, StyleSheet, FlatList,TouchableWithoutFeedback, Animated } from 'react-native'
 import React, { useEffect, useState } from 'react'
 
-import { Singleton_En } from '../assets/datas/Singleton.js'
+import { Singleton_En } from '../assets/data/Singleton.js'
 import { PinchGestureHandler, State } from 'react-native-gesture-handler'
 const SingletonScreen = ({navigation, route}) => {
     const content_text = (itext) =>{
@@ -36,7 +36,7 @@ const SingletonScreen = ({navigation, route}) => {
     const image_content = (imageLink) =>{
         return(
             <View>
-                <Image source={imageLink} />
+                <Image style={styles.image_content} source={imageLink} />
             </View>
         );
     };
@@ -44,9 +44,11 @@ const SingletonScreen = ({navigation, route}) => {
     return (
         <ScrollView>
             {header_text('Overview')}
+            {image_content(Singleton_En_Screen.Image_1)}
+
             {header1_text('Tên mẫu:')}
             {content_text(Singleton_En_Screen.Overview_1)}
-            {image_content(Singleton_En_Screen.Image_1)}
+
             {header1_text('Phân loại:')}
             {content_text(Singleton_En_Screen.Overview_2)}
             {header1_text('Mục đích:')}
@@ -58,8 +60,12 @@ const SingletonScreen = ({navigation, route}) => {
             {content_text(Singleton_En_Screen.Motivation_1)}
             {content_text(Singleton_En_Screen.Motivation_2)}
             {content_text('Ví dụ: ' + Singleton_En_Screen.Motivation_3)}
+            {image_content(Singleton_En_Screen.Image_2)}
+            {image_content(Singleton_En_Screen.Image_3)}
+            {image_content(Singleton_En_Screen.Image_4)}
 
             {header_text('Characteristics')}
+            {image_content(Singleton_En_Screen.Image_5)}
             {header1_text('Ý nghĩa từng thành viên:')}
             {content_text(Singleton_En_Screen.Characteristics_1)}
             {content_text(Singleton_En_Screen.Characteristics_2)}
@@ -109,6 +115,11 @@ const styles = StyleSheet.create({
     },
     content_highlight: {
         color: 'blue',
+    },
+    image_content: {
+        alignSelf: 'center',
+        resizeMode: 'contain',
+        width: '90%',
     },
 })
 
