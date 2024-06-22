@@ -1,13 +1,13 @@
 /* eslint-disable prettier/prettier */
-import FactoryMethod from "../images/FactoryMethod/factory-method-en-2x.png"
-import Problem1 from "../images/FactoryMethod/problem1-en-2x.png"
-import Solution1 from "../images/FactoryMethod/solution1-2x.png"
-import Solution2 from "../images/FactoryMethod/solution2-en-2x.png"
-import Solution3 from "../images/FactoryMethod/solution3-en-2x.png"
-import Structure1 from "../images/FactoryMethod/structure-indexed-2x.png"
+import FactoryMethod from '../images/FactoryMethod/factory-method-en-2x.png';
+import Problem1 from '../images/FactoryMethod/problem1-en-2x.png';
+import Solution1 from '../images/FactoryMethod/solution1-2x.png';
+import Solution2 from '../images/FactoryMethod/solution2-en-2x.png';
+import Solution3 from '../images/FactoryMethod/solution3-en-2x.png';
+import Structure1 from '../images/FactoryMethod/structure-indexed-2x.png';
 export const FactoryMethod_En = {
     Intent: [
-        'Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.'
+        'Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.',
     ],
     Problem: [
         'Imagine that you’re creating a logistics management application. The first version of your app can only handle transportation by trucks, so the bulk of your code lives inside the Truck class.',
@@ -24,7 +24,7 @@ export const FactoryMethod_En = {
 
     ],
     RealWorldAnalogy: [
-        'The government is an excellent example of the Singleton pattern. A country can have only one official government. Regardless of the personal identities of the individuals who form governments, the title, “The Government of X”, is a global point of access that identifies the group of people in charge.'
+        'The government is an excellent example of the Singleton pattern. A country can have only one official government. Regardless of the personal identities of the individuals who form governments, the title, “The Government of X”, is a global point of access that identifies the group of people in charge.',
     ],
     Structure:[
         '1. The Product declares the interface, which is common to all objects that can be produced by the creator and its subclasses.',
@@ -89,6 +89,6 @@ export const FactoryMethod_En = {
         Solution2,
         Solution3,
         Structure1,
-    ]
-}
+    ],
+};
 

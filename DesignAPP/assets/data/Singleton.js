@@ -25,7 +25,7 @@ export const Singleton_En = {
         'If your code has access to the Singleton class, then it’s able to call the Singleton’s static method. So whenever that method is called, the same object is always returned.',
     ],
     RealWorldAnalogy: [
-        'The government is an excellent example of the Singleton pattern. A country can have only one official government. Regardless of the personal identities of the individuals who form governments, the title, “The Government of X”, is a global point of access that identifies the group of people in charge.'
+        'The government is an excellent example of the Singleton pattern. A country can have only one official government. Regardless of the personal identities of the individuals who form governments, the title, “The Government of X”, is a global point of access that identifies the group of people in charge.',
     ],
     Structure:[
         '1. The Singleton class declares the static method getInstance that returns the same instance of its own class.',
@@ -69,6 +69,6 @@ export const Singleton_En = {
         Motivation2,
         Motivation3,
         Characteristics,
-    ]
-}
+    ],
+};
 

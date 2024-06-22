@@ -1,14 +1,14 @@
 /* eslint-disable prettier/prettier */
-import AbstractFactory from "../images/AbstractFactory/abstract-factory-en.png"
-import Problem1 from "../images/AbstractFactory/problem-en.png"
-import Problem2 from "../images/AbstractFactory/abstract-factory-comic-1-en.png"
-import Solution1 from "../images/AbstractFactory/solution1.png"
-import Solution2 from "../images/AbstractFactory/solution2.png"
-import Solution3 from "../images/AbstractFactory/abstract-factory-comic-2-en.png"
-import Structure1 from "../images/AbstractFactory/structure-indexed.png"
+import AbstractFactory from '../images/AbstractFactory/abstract-factory-en.png';
+import Problem1 from '../images/AbstractFactory/problem-en.png';
+import Problem2 from '../images/AbstractFactory/abstract-factory-comic-1-en.png';
+import Solution1 from '../images/AbstractFactory/solution1.png';
+import Solution2 from '../images/AbstractFactory/solution2.png';
+import Solution3 from '../images/AbstractFactory/abstract-factory-comic-2-en.png';
+import Structure1 from '../images/AbstractFactory/structure-indexed.png';
 export const AbstractFactory_En = {
     Intent: [
-        'Abstract Factory is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.'
+        'Abstract Factory is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.',
     ],
     Problem: [
         'Imagine that you’re creating a furniture shop simulator. Your code consists of classes that represent:',
@@ -27,7 +27,7 @@ export const AbstractFactory_En = {
 
     ],
     RealWorldAnalogy: [
-        'The government is an excellent example of the Singleton pattern. A country can have only one official government. Regardless of the personal identities of the individuals who form governments, the title, “The Government of X”, is a global point of access that identifies the group of people in charge.'
+        'The government is an excellent example of the Singleton pattern. A country can have only one official government. Regardless of the personal identities of the individuals who form governments, the title, “The Government of X”, is a global point of access that identifies the group of people in charge.',
     ],
     Structure:[
         '1. Abstract Products declare interfaces for a set of distinct but related products which make up a product family.',
@@ -41,21 +41,6 @@ export const AbstractFactory_En = {
         'The Abstract Factory provides you with an interface for creating objects from each class of the product family. As long as your code creates objects via this interface, you don’t have to worry about creating the wrong variant of a product which doesn’t match the products already created by your app.',
         'Consider implementing the Abstract Factory when you have a class with a set of Factory Methods that blur its primary responsibility.',
         'In a well-designed program each class is responsible only for one thing. When a class deals with multiple product types, it may be worth extracting its factory methods into a stand-alone factory class or a full-blown Abstract Factory implementation.',
-        'Inheritance is probably the easiest way to extend the default behavior of a library or framework. But how would the framework recognize that your subclass should be used instead of a standard component?',
-        'The solution is to reduce the code that constructs components across the framework into a single factory method and let anyone override this method in addition to extending the component itself.',
-        'Let’s see how that would work. Imagine that you write an app using an open source UI framework. Your app should have round buttons, but the framework only provides square ones. You extend the standard Button class with a glorious RoundButton subclass. But now you need to tell the main UIFramework class to use the new button subclass instead of a default one.',
-        'To achieve this, you create a subclass UIWithRoundButtons from a base framework class and override its createButton method. While this method returns Button objects in the base class, you make your subclass return RoundButton objects. Now use the UIWithRoundButtons class instead of UIFramework. And that’s about it!',
-        'Use the Factory Method when you want to save system resources by reusing existing objects instead of rebuilding them each time.',
-        'You often experience this need when dealing with large, resource-intensive objects such as database connections, file systems, and network resources.',
-        'Let’s think about what has to be done to reuse an existing object:',
-        '1. First, you need to create some storage to keep track of all of the created objects.',
-        '2. When someone requests an object, the program should look for a free object inside that pool.',
-        '3. … and then return it to the client code.',
-        '4. If there are no free objects, the program should create a new one (and add it to the pool).',
-        'That’s a lot of code! And it must all be put into a single place so that you don’t pollute the program with duplicate code.',
-        'Probably the most obvious and convenient place where this code could be placed is the constructor of the class whose objects we’re trying to reuse. However, a constructor must always return new objects by definition. It can’t return existing instances.',
-        'Therefore, you need to have a regular method capable of creating new objects as well as reusing existing ones. That sounds very much like a factory method.',
-
     ],
     HowtoImplement:[
         '1. Map out a matrix of distinct product types versus variants of these products.',
@@ -93,5 +78,5 @@ export const AbstractFactory_En = {
         Solution3,
         Structure1,
     ],
-}
+};
 
