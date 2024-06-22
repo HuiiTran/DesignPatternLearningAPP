@@ -5,7 +5,7 @@
  *
  * @format
  */
-
+import 'react-native-gesture-handler';
 import React from 'react';
 import {
   SafeAreaView,
@@ -24,14 +24,23 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+
 import SingletonScreen from './screens/SingletonScreen';
 import FactoryMethodScreen from './screens/FactoryMethodScreen';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+const Drawer = createDrawerNavigator();
 const App = ({navigation, route}) => {
   return (
-    <GestureHandlerRootView>
-      <FactoryMethodScreen/>
-    </GestureHandlerRootView>
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="SingletonScreen" drawerPosition="right">
+        <Drawer.Screen name="Singleton" component={SingletonScreen} />
+        <Drawer.Screen name="Factory Method" component={FactoryMethodScreen} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 };
 export default App;
