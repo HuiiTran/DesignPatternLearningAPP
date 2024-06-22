@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 import { FactoryMethod_En } from '../assets/data/FactoryMethod';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
+import { Mainstyles } from './Style';
 const FactoryMethodScreen = ({navigation, route}) => {
     const content_text = (itext) =>{
         return(
@@ -42,7 +43,7 @@ const FactoryMethodScreen = ({navigation, route}) => {
     };
     const bug_content_text = (itext) =>{
         return(
-            <Text style={styles.contentNum}>
+            <Text style={styles.bugcontenttext}>
                 <Image style={styles.ApplicabilityContent} source={require('../assets/icon/Applicability1.png')}/>{itext}
             </Text>
         );
@@ -186,61 +187,6 @@ const FactoryMethodScreen = ({navigation, route}) => {
     );
 };
 
-const styles = StyleSheet.create({
-    header: {
-        alignSelf: 'center',
-        fontWeight: 'bold',
-        color: 'black',
-        fontSize: 30,
-    },
-    header1: {
-        fontWeight: 'bold',
-        color: 'black',
-        fontSize: 30,
-    },
-    content: {
-        color: 'black',
-        fontSize: 15,
-        marginTop: 15,
-    },
-    contentNum: {
-        color: 'black',
-        fontSize: 15,
-        marginLeft: 20,
-        marginTop: 10,
-    },
-    contentDot: {
-        color: 'black',
-        fontSize: 15,
-        marginLeft: 20,
-        marginTop: 10,
-    },
-    content_highlight: {
-        color: 'blue',
-        fontSize: 15,
-        marginTop: 10,
-    },
-    image_content: {
-        alignSelf: 'center',
-        resizeMode: 'contain',
-        width: '90%',
-    },
-    mainContainer: {
-        marginLeft: 15,
-        marginRight: 15,
-    },
-    pros_cons_icon:{
-        width: 15,
-        height: 15,
-    },
-    header_icon:{
-        width: 35,
-        height: 35,
-    },
-    ApplicabilityContent:{
-        width: 30,
-        height: 30,
-    },
-});
+const styles = Mainstyles;
 
 export default FactoryMethodScreen;

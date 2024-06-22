@@ -27,18 +27,24 @@ import {
 
 import SingletonScreen from './screens/SingletonScreen';
 import FactoryMethodScreen from './screens/FactoryMethodScreen';
-
+import AbstractFactoryScreen from './screens/AbstractFactoryScreen';
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerToggleButton  } from '@react-navigation/drawer';
 
 const Drawer = createDrawerNavigator();
 const App = ({navigation, route}) => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="SingletonScreen" drawerPosition="right">
-        <Drawer.Screen name="Singleton" component={SingletonScreen} />
-        <Drawer.Screen name="Factory Method" component={FactoryMethodScreen} />
+      <Drawer.Navigator initialRouteName="SingletonScreen" screenOptions={{
+        drawerPosition: 'right',
+        headerLeft: false,
+        headerRight: () => <DrawerToggleButton />
+}}
+>
+        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Singleton" component={SingletonScreen}  />
+        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Factory Method" component={FactoryMethodScreen} />
+        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Abstract Factory" component={AbstractFactoryScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
