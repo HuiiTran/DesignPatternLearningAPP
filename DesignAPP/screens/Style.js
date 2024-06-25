@@ -1,56 +1,83 @@
 /* eslint-disable prettier/prettier */
 import { View, Text, ScrollView, Image, TouchableOpacity, StyleSheet, FlatList,TouchableWithoutFeedback, Animated } from 'react-native';
-
+import React from 'react';
 export const Mainstyles = StyleSheet.create({
+    bigHeader:{
+        alignSelf: 'center',
+        fontWeight: 'bold',
+        color: 'black',
+        fontSize: 95,
+    },
+    smallHeader:{
+        alignSelf: 'center',
+        fontWeight: 'bold',
+        color: '#444444',
+        fontSize: 67,
+        marginTop:-25,
+    },
     header: {
         alignSelf: 'center',
         fontWeight: 'bold',
         color: 'black',
-        fontSize: 30,
+        fontSize: 35,
+        marginTop:10
     },
     header1: {
         fontWeight: 'bold',
-        color: 'black',
-        fontSize: 30,
+        color: '#444444',
+        fontSize: 25,
+        marginTop:15
     },
     content: {
-        color: 'black',
+        color: '#444444',
         fontSize: 15,
-        marginTop: 15,
+        marginTop: 20,
+        marginLeft:5,
+        lineHeight:28
     },
     contentNum: {
         color: 'black',
         fontSize: 15,
-        marginLeft: 20,
+        marginLeft: 10,
         marginTop: 10,
+        lineHeight:28,
+        marginRight:5
     },
     contentDot: {
-        color: 'black',
+        color: '#444444',
         fontSize: 15,
-        marginLeft: 20,
+        marginLeft: 10,
         marginTop: 10,
+        lineHeight:28,
+        marginRight:5
+
     },
     bugcontenttext: {
-        color: 'black',
+        color: '#444444',
         fontSize: 15,
-        marginLeft: 20,
+        marginLeft: 5,
         marginTop: 10,
         fontWeight: 'bold',
+        lineHeight:28,
+        marginRight:5
     },
     content_highlight: {
         color: 'blue',
         fontSize: 15,
         marginTop: 10,
+        lineHeight:28
+
     },
     image_content: {
         alignSelf: 'center',
         resizeMode: 'contain',
         width: '90%',
         height: 250,
+        marginTop:5
     },
     mainContainer: {
-        marginLeft: 15,
-        marginRight: 15,
+        marginLeft: 20,
+        marginRight: 20,
     },
     pros_cons_icon:{
         width: 15,
@@ -64,4 +91,11 @@ export const Mainstyles = StyleSheet.create({
         width: 30,
         height: 30,
     },
+    CatalogHeader:{
+        alignSelf: 'center',
+        fontWeight: 'bold',
+        color: '#444444',
+        fontSize: 50,
+        marginTop:20
+    }
 });
