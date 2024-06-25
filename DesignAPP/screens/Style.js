@@ -26,7 +26,8 @@ export const Mainstyles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#444444',
         fontSize: 25,
-        marginTop:15
+        marginTop:20,
+        marginLeft:5
     },
     content: {
         color: '#444444',
@@ -92,7 +93,7 @@ export const Mainstyles = StyleSheet.create({
         height: 30,
     },
     CatalogHeader:{
-        alignSelf: 'center',
+        alignSelf: 'flex-start',
         fontWeight: 'bold',
         color: '#444444',
         fontSize: 50,
