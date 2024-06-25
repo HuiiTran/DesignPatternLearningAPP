@@ -33,14 +33,14 @@ export const Mainstyles = StyleSheet.create({
         color: '#444444',
         fontSize: 15,
         marginTop: 20,
-        marginLeft:5,
+        marginLeft:10,
         lineHeight:28
     },
     contentNum: {
         color: 'black',
         fontSize: 15,
         marginLeft: 10,
-        marginTop: 10,
+        marginTop: 20,
         lineHeight:28,
         marginRight:5
     },
@@ -48,7 +48,7 @@ export const Mainstyles = StyleSheet.create({
         color: '#444444',
         fontSize: 15,
         marginLeft: 10,
-        marginTop: 10,
+        marginTop: 20,
         lineHeight:28,
         marginRight:5
 
@@ -56,8 +56,8 @@ export const Mainstyles = StyleSheet.create({
     bugcontenttext: {
         color: '#444444',
         fontSize: 15,
-        marginLeft: 5,
-        marginTop: 10,
+        marginLeft: 10,
+        marginTop: 20,
         fontWeight: 'bold',
         lineHeight:28,
         marginRight:5
@@ -65,7 +65,7 @@ export const Mainstyles = StyleSheet.create({
     content_highlight: {
         color: 'blue',
         fontSize: 15,
-        marginTop: 10,
+        marginTop: 20,
         lineHeight:28
 
     },

@@ -161,7 +161,7 @@ const Catalog = ({ navigation, route }) => {
                         image={chainofresponsibility}
                         name={'Chain of Responsibility'}
                         onPress={() =>
-                            navigation.navigate('Chain of Responsibility')
+                            navigation.navigate('Chain Of Responsibility')
                         }></DesignPatternComponent>
                     <DesignPatternComponent
                         image={command}

@@ -67,7 +67,6 @@ export const AbstractFactory_En = {
         'Abstract Factory can serve as an alternative to Facade when you only want to hide the way the subsystem objects are created from the client code.',
         'You can use Abstract Factory along with Bridge. This pairing is useful when some abstractions defined by Bridge can only work with specific implementations. In this case, Abstract Factory can encapsulate these relations and hide the complexity from the client code.',
         'Abstract Factories, Builders and Prototypes can all be implemented as Singletons.',
-
     ],
     Image: [
         AbstractFactory,
