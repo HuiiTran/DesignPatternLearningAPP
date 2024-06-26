@@ -30,6 +30,12 @@ export const Mainstyles = StyleSheet.create({
         marginLeft: 20,
         marginTop: 10,
     },
+    contentWhiteDot: {
+        color: 'black',
+        fontSize: 15,
+        marginLeft: 40,
+        marginTop: 10,
+    },
     bugcontenttext: {
         color: 'black',
         fontSize: 15,

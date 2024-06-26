@@ -2,10 +2,10 @@
 import { View, Text, ScrollView, Image, TouchableOpacity, StyleSheet, FlatList,TouchableWithoutFeedback, Animated } from 'react-native';
 import React, { useEffect, useState } from 'react';
 
-import { AbstractFactory_En } from '../assets/data/AbstractFactory';
+import { Facade_En } from '../assets/data/Facade';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
 import { Mainstyles } from './Style';
-const AbstractFactoryScreen = ({navigation, route}) => {
+const FacadeScreen = ({navigation, route}) => {
     const content_text = (itext) =>{
         return(
             <Text style={styles.content}>
@@ -17,6 +17,13 @@ const AbstractFactoryScreen = ({navigation, route}) => {
         return(
             <Text style={styles.contentDot}>
                 • {itext}
+            </Text>
+        );
+    };
+    const whitedot_content_text = (itext) =>{
+        return(
+            <Text style={styles.contentWhiteDot}>
+                ○ {itext}
             </Text>
         );
     };
@@ -76,96 +83,92 @@ const AbstractFactoryScreen = ({navigation, route}) => {
             </View>
         );
     };
-    const AbstractFactory_En_Screen = AbstractFactory_En;
+    const Facade_En_En_Screen = Facade_En;
     return (
         <ScrollView showsVerticalScrollIndicator={false} style={styles.mainContainer}>
-            {header_text('Abstract Factory')}
+            {header_text('Facade')}
             <Text>
                 <Image style={styles.header_icon} source={require('../assets/icon/Intent.png')}/>
                 {header1_text('Intent')}
             </Text>
-            {content_text(AbstractFactory_En_Screen.Intent[0])}
-            {image_content(AbstractFactory_En_Screen.Image[0])}
+            {content_text(Facade_En_En_Screen.Intent[0])}
+            {image_content(Facade_En_En_Screen.Image[0])}
 
 
             <Text>
                 <Image style={styles.header_icon} source={require('../assets/icon/Problem.png')}/>
                 {header1_text('Problem')}
             </Text>
-            {content_text(AbstractFactory_En_Screen.Problem[0])}
-            {num_content_text(AbstractFactory_En_Screen.Problem[1])}
-            {num_content_text(AbstractFactory_En_Screen.Problem[2])}
-            {image_content(AbstractFactory_En_Screen.Image[1])}
-            {content_text(AbstractFactory_En_Screen.Problem[3])}
-            {image_content(AbstractFactory_En_Screen.Image[2])}
-            {content_text(AbstractFactory_En_Screen.Problem[4])}
+            {content_text(Facade_En_En_Screen.Problem[0])}
+            {content_text(Facade_En_En_Screen.Problem[1])}
 
 
             <Text>
                 <Image style={styles.header_icon} source={require('../assets/icon/Solution.png')}/>
                 {header1_text('Solution')}
             </Text>
-            {content_text(AbstractFactory_En_Screen.Solution[0])}
-            {image_content(AbstractFactory_En_Screen.Image[3])}
-            {content_text(AbstractFactory_En_Screen.Solution[1])}
-            {image_content(AbstractFactory_En_Screen.Image[4])}
-            {content_text(AbstractFactory_En_Screen.Solution[2])}
-            {content_text(AbstractFactory_En_Screen.Solution[3])}
-            {image_content(AbstractFactory_En_Screen.Image[5])}
-            {content_text(AbstractFactory_En_Screen.Solution[4])}
-            {content_text(AbstractFactory_En_Screen.Solution[5])}
+            {content_text(Facade_En_En_Screen.Solution[0])}
+            {content_text(Facade_En_En_Screen.Solution[1])}
+            {content_text(Facade_En_En_Screen.Solution[2])}
+
+
+
+            <Text>
+                <Image style={styles.header_icon} source={require('../assets/icon/RealWorld.png')}/>
+                {header1_text('Real-World Analogy')}
+            </Text>
+            {image_content(Facade_En_En_Screen.Image[1])}
+            {content_text(Facade_En_En_Screen.RealWorldAnalogy[0])}
 
             <Text>
                 <Image style={styles.header_icon} source={require('../assets/icon/Structure.png')}/>
                 {header1_text('Structure')}
             </Text>
-            {image_content(AbstractFactory_En_Screen.Image[6])}
-            {num_content_text(AbstractFactory_En_Screen.Structure[0])}
-            {num_content_text(AbstractFactory_En_Screen.Structure[1])}
-            {num_content_text(AbstractFactory_En_Screen.Structure[2])}
-            {num_content_text(AbstractFactory_En_Screen.Structure[3])}
-            {num_content_text(AbstractFactory_En_Screen.Structure[4])}
+            {image_content(Facade_En_En_Screen.Image[2])}
+            {num_content_text(Facade_En_En_Screen.Structure[0])}
+            {num_content_text(Facade_En_En_Screen.Structure[1])}
+            {num_content_text(Facade_En_En_Screen.Structure[2])}
+            {num_content_text(Facade_En_En_Screen.Structure[3])}
+            {num_content_text(Facade_En_En_Screen.Structure[4])}
 
             <Text>
                 <Image style={styles.header_icon} source={require('../assets/icon/Applicability.png')}/>
                 {header1_text('Applicability')}
             </Text>
-            {bug_content_text(AbstractFactory_En_Screen.Applicability[0])}
-            {lightN_content_text(AbstractFactory_En_Screen.Applicability[1])}
-            {bug_content_text(AbstractFactory_En_Screen.Applicability[2])}
-            {lightN_content_text(AbstractFactory_En_Screen.Applicability[3])}
-
+            {bug_content_text(Facade_En_En_Screen.Applicability[0])}
+            {lightN_content_text(Facade_En_En_Screen.Applicability[1])}
+            {bug_content_text(Facade_En_En_Screen.Applicability[2])}
+            {lightN_content_text(Facade_En_En_Screen.Applicability[3])}
+            {num_content_text(Facade_En_En_Screen.Applicability[4])}
 
             <Text>
                 <Image style={styles.header_icon} source={require('../assets/icon/Implement.png')}/>
                 {header1_text('How to Implement')}
             </Text>
-            {num_content_text(AbstractFactory_En_Screen.HowtoImplement[0])}
-            {num_content_text(AbstractFactory_En_Screen.HowtoImplement[1])}
-            {num_content_text(AbstractFactory_En_Screen.HowtoImplement[2])}
-            {num_content_text(AbstractFactory_En_Screen.HowtoImplement[3])}
-            {num_content_text(AbstractFactory_En_Screen.HowtoImplement[4])}
-            {num_content_text(AbstractFactory_En_Screen.HowtoImplement[5])}
+            {num_content_text(Facade_En_En_Screen.HowtoImplement[0])}
+            {num_content_text(Facade_En_En_Screen.HowtoImplement[1])}
+            {num_content_text(Facade_En_En_Screen.HowtoImplement[2])}
+            {num_content_text(Facade_En_En_Screen.HowtoImplement[3])}
 
             <Text>
                 <Image style={styles.header_icon} source={require('../assets/icon/ProsCons.png')}/>
                 {header1_text('Pros and Cons')}
             </Text>
-            {greenTick_content_text(AbstractFactory_En_Screen.Pros[0])}
-            {greenTick_content_text(AbstractFactory_En_Screen.Pros[1])}
-            {greenTick_content_text(AbstractFactory_En_Screen.Pros[2])}
-            {greenTick_content_text(AbstractFactory_En_Screen.Pros[3])}
-            {redX_content_text(AbstractFactory_En_Screen.Cons[0])}
+            {greenTick_content_text(Facade_En_En_Screen.Pros[0])}
+            {redX_content_text(Facade_En_En_Screen.Cons[0])}
 
             <Text>
                 <Image style={styles.header_icon} source={require('../assets/icon/Relations.png')}/>
                 {header1_text('Relations with Other Patterns:')}
             </Text>
-            {dot_content_text(AbstractFactory_En_Screen.RelationswithOtherPatterns[0])}
-            {dot_content_text(AbstractFactory_En_Screen.RelationswithOtherPatterns[1])}
-            {dot_content_text(AbstractFactory_En_Screen.RelationswithOtherPatterns[2])}
-            {dot_content_text(AbstractFactory_En_Screen.RelationswithOtherPatterns[3])}
-            {dot_content_text(AbstractFactory_En_Screen.RelationswithOtherPatterns[4])}
+            {dot_content_text(Facade_En_En_Screen.RelationswithOtherPatterns[0])}
+            {dot_content_text(Facade_En_En_Screen.RelationswithOtherPatterns[1])}
+            {dot_content_text(Facade_En_En_Screen.RelationswithOtherPatterns[2])}
+            {dot_content_text(Facade_En_En_Screen.RelationswithOtherPatterns[3])}
+            {whitedot_content_text(Facade_En_En_Screen.RelationswithOtherPatterns[4])}
+            {whitedot_content_text(Facade_En_En_Screen.RelationswithOtherPatterns[5])}
+            {dot_content_text(Facade_En_En_Screen.RelationswithOtherPatterns[6])}
+            {dot_content_text(Facade_En_En_Screen.RelationswithOtherPatterns[7])}
 
         </ScrollView>
     );
@@ -173,4 +176,4 @@ const AbstractFactoryScreen = ({navigation, route}) => {
 
 const styles = Mainstyles;
 
-export default AbstractFactoryScreen;
+export default FacadeScreen;
