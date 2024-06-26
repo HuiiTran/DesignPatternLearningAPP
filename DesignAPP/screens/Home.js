@@ -6,7 +6,6 @@ import { Home_En } from '../assets/data/Home';
 import { Mainstyles } from './Style';
 import StyleButton from './StyleButton';
 
-import factorymethod from '../assets/data/components/pattern icons/creational patterns/factorymethod.png'
 
 
 const HomeScreen = ({navigation, route}) => {

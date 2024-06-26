@@ -86,7 +86,7 @@ const ProxyScreen = ({navigation, route}) => {
     const Proxy_En_Screen = Proxy_En;
     return (
         <ScrollView showsVerticalScrollIndicator={false} style={styles.mainContainer}>
-            {header_text('Facade')}
+            {header_text('Proxy')}
             <Text>
                 <Image style={styles.header_icon} source={require('../assets/icon/Intent.png')}/>
                 {header1_text('Intent')}
