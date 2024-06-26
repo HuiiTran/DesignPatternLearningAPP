@@ -53,6 +53,12 @@ export const Mainstyles = StyleSheet.create({
         marginRight:5
 
     },
+    contentWhiteDot: {
+        color: 'black',
+        fontSize: 15,
+        marginLeft: 40,
+        marginTop: 10,
+    },
     bugcontenttext: {
         color: '#444444',
         fontSize: 15,

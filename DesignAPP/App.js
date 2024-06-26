@@ -33,6 +33,13 @@ import PrototypeScreen from './screens/ProtoypeScreen';
 import ChainOfResponsibilityScreen from './screens/ChainOfResponsibilityScreen';
 import CommandScreen from './screens/CommandScreen';
 import IteratorScreen from './screens/IteratorScreen';
+import AdapterScreen from './screens/AdapterScreen';
+import BridgeScreen from './screens/BridgeScreen';
+import CompositeScreen from './screens/CompositeScreen';
+import DecoratorScreen from './screens/DecoratorScreen';
+import FacadeScreen from './screens/FacadeScreen';
+import FlyweightScreen from './screens/FlyweightScreen';
+import ProxyScreen from './screens/ProxyScreen';
 
 import Home from './screens/Home';
 import Catalog from './screens/Catalog';
@@ -61,6 +68,13 @@ const App = ({navigation, route}) => {
         <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Builder" component={BuilderScreen} />
         <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Prototype" component={PrototypeScreen} />
         <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Singleton" component={SingletonScreen}  />
+        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Adapter" component={AdapterScreen}  />
+        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Bridge" component={BridgeScreen}  />
+        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Composite" component={CompositeScreen}  />
+        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Decorator" component={DecoratorScreen}  />
+        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Facade" component={FacadeScreen}  />
+        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Flyweight" component={FlyweightScreen}  />
+        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Proxy" component={ProxyScreen}  />
         
       </Drawer.Navigator>
     </NavigationContainer>
