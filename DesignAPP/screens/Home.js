@@ -52,7 +52,8 @@ const HomeScreen = ({navigation, route}) => {
 
             {image_content(Home_En_Screen.Image[0])}
             {content_text(Home_En_Screen.Definition[0])}
-            <StyleButton buttonText={'What’s a design pattern?'}></StyleButton>
+            <StyleButton buttonText={'What’s a design pattern?'} onPress={() => navigation.navigate('WhatisDesignPatternScreen')}></StyleButton>
+            
 
             <Text style = {styles.header1}>
                 <Image style={styles.header_icon} source={require('../assets/icon/bookmark.png')}/>

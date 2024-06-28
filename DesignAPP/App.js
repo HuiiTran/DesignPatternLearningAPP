@@ -7,6 +7,7 @@
  */
 import 'react-native-gesture-handler';
 import React from 'react';
+import { Dimensions } from 'react-native';
 import {
   SafeAreaView,
   ScrollView,
@@ -43,39 +44,74 @@ import ProxyScreen from './screens/ProxyScreen';
 
 import Home from './screens/Home';
 import Catalog from './screens/Catalog';
+import WhatisDesignPatternScreen from './screens/WhatisDesignPatternScreen';
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator, DrawerToggleButton  } from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerToggleButton  } from '@react-navigation/drawer';
+
+const CustomDrawer = (props) => {
+  return(
+    <View style={{ flex: 1}}>
+      <DrawerContentScrollView
+      {...props}
+      contentContainerStyle={{backgroundColor: '#E74C3C'}}>
+        <View style={{height: 50}}>
+          {/* <Text style={{color: '#fff', alignSelf: 'center', fontSize: 40, marginTop: 25}}>Design Pattern</Text> */}
+        </View>
+        <View style = {{width:'91%',
+        height:2,
+        backgroundColor:'#382F29',
+        opacity: 0.2,
+        marginLeft:20,
+        marginRight:20}}></View>
+      <DrawerItemList {...props} />
+      </DrawerContentScrollView>
+    </View>
+  )
+}
 
 const Drawer = createDrawerNavigator();
 const App = ({navigation, route}) => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home" screenOptions={{
+      <Drawer.Navigator initialRouteName="Home"
+      backBehavior="history"
+      drawerContent={props => <CustomDrawer {...props} />}
+       screenOptions={{
         drawerPosition: 'right',
+        drawerActiveBackgroundColor: '#bc463a',
+        drawerActiveTintColor: '#fff',
+        drawerInactiveTintColor: '#fff',
         headerLeft: false,
-        headerRight: () => <DrawerToggleButton />
+        drawerStyle: {
+          width: Dimensions.get('window').width / 1.7,
+        },
+        headerRight: () => <DrawerToggleButton />,
 }}
+        
 >
         <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Home" component={Home} />
         <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Catalog" component={Catalog} />
-        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Chain Of Responsibility" component={ChainOfResponsibilityScreen} />
-        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Command" component={CommandScreen} />
-        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Iterator" component={IteratorScreen} />
+        <Drawer.Screen options={{drawerItemStyle: { display: 'none' }, headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="WhatisDesignPatternScreen" component={WhatisDesignPatternScreen} />
 
-        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Factory Method" component={FactoryMethodScreen} />
-        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Abstract Factory" component={AbstractFactoryScreen} />
-        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Builder" component={BuilderScreen} />
-        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Prototype" component={PrototypeScreen} />
-        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Singleton" component={SingletonScreen}  />
-        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Adapter" component={AdapterScreen}  />
-        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Bridge" component={BridgeScreen}  />
-        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Composite" component={CompositeScreen}  />
-        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Decorator" component={DecoratorScreen}  />
-        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Facade" component={FacadeScreen}  />
-        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Flyweight" component={FlyweightScreen}  />
-        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Proxy" component={ProxyScreen}  />
+
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Factory Method" component={FactoryMethodScreen} />
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Abstract Factory" component={AbstractFactoryScreen} />
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Builder" component={BuilderScreen} />
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Prototype" component={PrototypeScreen} />
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Singleton" component={SingletonScreen}  />
+
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Adapter" component={AdapterScreen}  />
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Bridge" component={BridgeScreen}  />
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Composite" component={CompositeScreen}  />
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Decorator" component={DecoratorScreen}  />
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Facade" component={FacadeScreen}  />
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Flyweight" component={FlyweightScreen}  />
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Proxy" component={ProxyScreen}  />
         
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Chain Of Responsibility" component={ChainOfResponsibilityScreen} />
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Command" component={CommandScreen} />
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Iterator" component={IteratorScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
