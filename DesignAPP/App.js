@@ -41,6 +41,7 @@ import FacadeScreen from './screens/FacadeScreen';
 import FlyweightScreen from './screens/FlyweightScreen';
 import ProxyScreen from './screens/ProxyScreen';
 import MediatorScreen from './screens/MediatorScreen';
+import MementoScreen from './screens/MementoScreen';
 
 import Home from './screens/Home';
 import Catalog from './screens/Catalog';
@@ -64,6 +65,7 @@ const App = ({navigation, route}) => {
         <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Command" component={CommandScreen} />
         <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Iterator" component={IteratorScreen} />
         <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Mediator" component={MediatorScreen} />
+        <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Memento" component={MementoScreen} />
 
         <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Factory Method" component={FactoryMethodScreen} />
         <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Abstract Factory" component={AbstractFactoryScreen} />
