@@ -4,8 +4,10 @@ import React, { useEffect, useState } from 'react';
 
 import { State_En } from '../assets/data/State';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
+import ReturnButton from './ReturnButton';
 import { Mainstyles } from './Style';
 const StateScreen = ({navigation, route}) => {
+    const [isNext, setIsNext] = useState(true);
     const content_text = (itext) =>{
         return(
             <Text style={styles.content}>
@@ -180,6 +182,9 @@ const StateScreen = ({navigation, route}) => {
             </Text>
             {dot_content_text(State_En_Screen.RelationswithOtherPatterns[0])}
             {dot_content_text(State_En_Screen.RelationswithOtherPatterns[1])}
+
+            <ReturnButton isNext={isNext} title={'Strategy'} onPress={() => navigation.navigate('Strategy')}></ReturnButton>
+            <ReturnButton isNext={!isNext} title={'Observer'} onPress={() => navigation.navigate('Observer')}></ReturnButton>
 
             <View style={{height:30}}></View>
         </ScrollView>

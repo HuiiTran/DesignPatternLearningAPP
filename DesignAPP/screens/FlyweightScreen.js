@@ -5,7 +5,10 @@ import React, { useEffect, useState } from 'react';
 import { Flyweight_En } from '../assets/data/Flyweight';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
 import { Mainstyles } from './Style';
+import ReturnButton from './ReturnButton';
 const FlyweightScreen = ({navigation, route}) => {
+    const [isNext, setIsNext] = useState(true);
+
     const content_text = (itext) =>{
         return(
             <Text style={styles.content}>
@@ -180,6 +183,10 @@ const FlyweightScreen = ({navigation, route}) => {
             {dot_content_text(Flyweight_En_Screen.RelationswithOtherPatterns[2])}
             {whitedot_content_text(Flyweight_En_Screen.RelationswithOtherPatterns[3])}
             {whitedot_content_text(Flyweight_En_Screen.RelationswithOtherPatterns[4])}
+
+            <ReturnButton isNext={isNext} title={'Proxy'} onPress={() => navigation.navigate('Proxy')}></ReturnButton>
+            <ReturnButton isNext={!isNext} title={'Facade'} onPress={() => navigation.navigate('Facade')}></ReturnButton>
+            <View style={{height:30}}></View>
 
         </ScrollView>
     );

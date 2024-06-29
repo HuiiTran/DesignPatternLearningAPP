@@ -6,8 +6,10 @@ import { ChainOfResponsibility_En } from '../assets/data/ChainOfResponsibility';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
 import { Mainstyles } from './Style';
 import { Command_En } from '../assets/data/Command';
-
+import ReturnButton from './ReturnButton';
 const CommandScreen = ({navigation, route}) => {
+    const [isNext, setIsNext] = useState(true);
+
     const content_text = (itext) =>{
         return(
             <Text style={styles.content}>
@@ -200,6 +202,9 @@ const CommandScreen = ({navigation, route}) => {
             {dot_content_text(Command_En_Screen.RelationswithOtherPatterns[10])}
             {dot_content_text(Command_En_Screen.RelationswithOtherPatterns[11])}
             {dot_content_text(Command_En_Screen.RelationswithOtherPatterns[12])}
+
+            <ReturnButton isNext={isNext} title={'Iterator'} onPress={() => navigation.navigate('Iterator')}></ReturnButton>
+            <ReturnButton isNext={!isNext} title={'Chain Of Responsibility'} onPress={() => navigation.navigate('Chain Of Responsibility')}></ReturnButton>
 
             <View style={{height:30}}></View>
         </ScrollView>

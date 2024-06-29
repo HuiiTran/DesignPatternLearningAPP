@@ -5,7 +5,10 @@ import React, { useEffect, useState } from 'react';
 import { Singleton_En } from '../assets/data/Singleton.js';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
 import { Mainstyles } from './Style.js';
+import ReturnButton from './ReturnButton.js';
 const SingletonScreen = ({navigation, route}) => {
+    const [isNext, setIsNext] = useState(true);
+
     const content_text = (itext) =>{
         return(
             <Text style={styles.content}>
@@ -168,6 +171,10 @@ const SingletonScreen = ({navigation, route}) => {
             {num_content_text(Singleton_Vn_Screen.RelationswithOtherPatterns[2])}
             {num_content_text(Singleton_Vn_Screen.RelationswithOtherPatterns[3])}
             {dot_content_text(Singleton_Vn_Screen.RelationswithOtherPatterns[4])}
+
+            <ReturnButton isNext={isNext} title={'Adapter'} onPress={() => navigation.navigate('Adapter')}></ReturnButton>
+            <ReturnButton isNext={!isNext} title={'Prototype'} onPress={() => navigation.navigate('Prototype')}></ReturnButton>
+            <View style={{height:30}}></View>
 
         </ScrollView>
     );

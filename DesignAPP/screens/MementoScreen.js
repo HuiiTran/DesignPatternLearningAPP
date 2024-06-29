@@ -4,8 +4,11 @@ import React, { useEffect, useState } from 'react';
 
 import { Memento_En } from '../assets/data/Memento';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
+import ReturnButton from './ReturnButton';
 import { Mainstyles } from './Style';
 const MementoScreen = ({navigation, route}) => {
+    const [isNext, setIsNext] = useState(true);
+
     const content_text = (itext) =>{
         return(
             <Text style={styles.content}>
@@ -186,6 +189,9 @@ const MementoScreen = ({navigation, route}) => {
             {dot_content_text(Memento_En_Screen.RelationswithOtherPatterns[0])}
             {dot_content_text(Memento_En_Screen.RelationswithOtherPatterns[1])}
             {dot_content_text(Memento_En_Screen.RelationswithOtherPatterns[2])}
+
+            <ReturnButton isNext={isNext} title={'Observer'} onPress={() => navigation.navigate('Observer')}></ReturnButton>
+            <ReturnButton isNext={!isNext} title={'Mediator'} onPress={() => navigation.navigate('Mediator')}></ReturnButton>
 
             <View style={{height:30}}></View>
         </ScrollView>

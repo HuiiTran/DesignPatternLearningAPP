@@ -4,8 +4,11 @@ import React, { useEffect, useState } from 'react';
 
 import { Mediator_En } from '../assets/data/Mediator';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
+import ReturnButton from './ReturnButton';
 import { Mainstyles } from './Style';
 const MediatorScreen = ({navigation, route}) => {
+    const [isNext, setIsNext] = useState(true);
+
     const content_text = (itext) =>{
         return(
             <Text style={styles.content}>
@@ -182,6 +185,8 @@ const MediatorScreen = ({navigation, route}) => {
             {content_text(Mediator_En_Screen.RelationswithOtherPatterns[11])}
             {content_text(Mediator_En_Screen.RelationswithOtherPatterns[12])}
 
+            <ReturnButton isNext={isNext} title={'Memento'} onPress={() => navigation.navigate('Memento')}></ReturnButton>
+            <ReturnButton isNext={!isNext} title={'Iterator'} onPress={() => navigation.navigate('Iterator')}></ReturnButton>
             <View style={{height:30}}></View>
         </ScrollView>
     );

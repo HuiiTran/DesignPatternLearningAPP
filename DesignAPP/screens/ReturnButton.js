@@ -1,12 +1,12 @@
 import { View, Text,StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-const ReturnButton = ({isNext, onPress}) => {
-  const title = isNext ? 'Read Next' : 'Return';
+const ReturnButton = ({isNext, title, onPress}) => {
+  
   const buttonStyle = isNext ? styles.nextButton : styles.returnButton
   return (
     <TouchableOpacity
-    style = {[styles.button, buttonStyle]}>
+    style = {[styles.button, buttonStyle]} onPress={onPress}>
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
     
