@@ -45,6 +45,7 @@ import MediatorScreen from './screens/MediatorScreen';
 import MementoScreen from './screens/MementoScreen';
 import ObserverScreen from './screens/ObserverScreen';
 import StateScreen from './screens/StateScreen';
+import StrategyScreen from './screens/StrategyScreen';
 
 import Home from './screens/Home';
 import Catalog from './screens/Catalog';
@@ -120,6 +121,7 @@ const App = ({navigation, route}) => {
         <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Memento" component={MementoScreen} />
         <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Observer" component={ObserverScreen} />
         <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="State" component={StateScreen} />
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Strategy" component={StrategyScreen} />
 
 
       </Drawer.Navigator>
