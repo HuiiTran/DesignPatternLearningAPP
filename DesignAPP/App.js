@@ -52,6 +52,10 @@ import VisitorScreen from './screens/VisitorScreen';
 import Home from './screens/Home';
 import Catalog from './screens/Catalog';
 import WhatisDesignPatternScreen from './screens/WhatisDesignPatternScreen';
+import BenefitsofPatternsScreen from './screens/BenefitsofPatternsScreen';
+import ClassificationScreen from './screens/ClassificationScreen';
+import HistoryofpatternsScreen from './screens/HistoryofpatternsScreen';
+import CriticismofPatternsScreen from './screens/CriticismofPatternsScreen';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerToggleButton  } from '@react-navigation/drawer';
@@ -100,6 +104,10 @@ const App = ({navigation, route}) => {
         <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Home" component={Home} />
         <Drawer.Screen options={{headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="Catalog" component={Catalog} />
         <Drawer.Screen options={{drawerItemStyle: { display: 'none' }, headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="WhatisDesignPatternScreen" component={WhatisDesignPatternScreen} />
+        <Drawer.Screen options={{drawerItemStyle: { display: 'none' }, headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="BenefitsofPatternsScreen" component={BenefitsofPatternsScreen} />
+        <Drawer.Screen options={{drawerItemStyle: { display: 'none' }, headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="ClassificationScreen" component={ClassificationScreen} />
+        <Drawer.Screen options={{drawerItemStyle: { display: 'none' }, headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="HistoryofpatternsScreen" component={HistoryofpatternsScreen} />
+        <Drawer.Screen options={{drawerItemStyle: { display: 'none' }, headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#E74C3C'}, headerTintColor: '#fff',}} name="CriticismofPatternsScreen" component={CriticismofPatternsScreen} />
 
 
         <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Factory Method" component={FactoryMethodScreen} />
