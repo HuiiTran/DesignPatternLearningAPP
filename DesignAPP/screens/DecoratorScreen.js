@@ -5,7 +5,10 @@ import React, { useEffect, useState } from 'react';
 import { Decorator_En } from '../assets/data/Decorator';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
 import { Mainstyles } from './Style';
+import ReturnButton from './ReturnButton';
 const DecoratorScreen = ({navigation, route}) => {
+    const [isNext, setIsNext] = useState(true);
+
     const content_text = (itext) =>{
         return(
             <Text style={styles.content}>
@@ -196,6 +199,10 @@ const DecoratorScreen = ({navigation, route}) => {
             {dot_content_text(Decorator_En_Screen.RelationswithOtherPatterns[7])}
             {dot_content_text(Decorator_En_Screen.RelationswithOtherPatterns[8])}
             {dot_content_text(Decorator_En_Screen.RelationswithOtherPatterns[9])}
+
+            <ReturnButton isNext={isNext} title={'Facade'} onPress={() => navigation.navigate('Facade')}></ReturnButton>
+            <ReturnButton isNext={!isNext} title={'Composite'} onPress={() => navigation.navigate('Composite')}></ReturnButton>
+            <View style={{height:30}}></View>
         </ScrollView>
     );
 };

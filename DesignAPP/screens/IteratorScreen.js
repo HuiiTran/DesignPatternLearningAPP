@@ -5,8 +5,11 @@ import React, { useEffect, useState } from 'react';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
 import { Mainstyles } from './Style';
 import { Iterator_En } from '../assets/data/Iterator';
+import ReturnButton from './ReturnButton';
 
 const IteratorScreen = ({navigation, route}) => {
+    const [isNext, setIsNext] = useState(true);
+
     const content_text = (itext) =>{
         return(
             <Text style={styles.content}>
@@ -175,6 +178,9 @@ const IteratorScreen = ({navigation, route}) => {
             {dot_content_text(Iterator_En_Screen.RelationswithOtherPatterns[1])}
             {dot_content_text(Iterator_En_Screen.RelationswithOtherPatterns[2])}
             {dot_content_text(Iterator_En_Screen.RelationswithOtherPatterns[3])}
+
+            <ReturnButton isNext={isNext} title={'Mediator'} onPress={() => navigation.navigate('Mediator')}></ReturnButton>
+            <ReturnButton isNext={!isNext} title={'Command'} onPress={() => navigation.navigate('Command')}></ReturnButton>
 
             <View style={{height:30}}></View>
         </ScrollView>

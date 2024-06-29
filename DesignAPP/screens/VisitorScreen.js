@@ -10,17 +10,7 @@ import { Mainstyles } from './Style';
 const VisitorScreen = ({navigation, route}) => {
     const [isNext, setIsNext] = useState(true);
 
-    const handlePress = () => {
-        if (isNext) {
-            // Navigate to the next page
-            console.log('Navigating to the next page');
-        } else {
-            // Return to the previous page
-            console.log('Returning to the previous page');
-        }
-        // Toggle the button state for demonstration purposes
-        setIsNext(!isNext);
-    };
+
 
     const content_text = (itext) =>{
         return(
@@ -196,8 +186,8 @@ const VisitorScreen = ({navigation, route}) => {
             {dot_content_text(Visitor_En_Screen.RelationswithOtherPatterns[1])}
             {dot_content_text(Visitor_En_Screen.RelationswithOtherPatterns[2])}
 
-            <ReturnButton isNext={isNext} onPress={handlePress}></ReturnButton>
-            <ReturnButton isNext={!isNext} onPress={handlePress}></ReturnButton>
+            <ReturnButton isNext={isNext} title={'Home'} onPress={() => navigation.navigate('Home')}></ReturnButton>
+            <ReturnButton isNext={!isNext} title={'Template Method'} onPress={() => navigation.navigate('Template Method')}></ReturnButton>
             <View style={{height:30}}></View>
         </ScrollView>
     );

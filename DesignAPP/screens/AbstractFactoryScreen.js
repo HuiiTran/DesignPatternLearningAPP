@@ -5,7 +5,10 @@ import React, { useEffect, useState } from 'react';
 import { AbstractFactory_En } from '../assets/data/AbstractFactory';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
 import { Mainstyles } from './Style';
+import ReturnButton from './ReturnButton';
 const AbstractFactoryScreen = ({navigation, route}) => {
+    const [isNext, setIsNext] = useState(true);
+
     const content_text = (itext) =>{
         return(
             <Text style={styles.content}>
@@ -166,6 +169,10 @@ const AbstractFactoryScreen = ({navigation, route}) => {
             {dot_content_text(AbstractFactory_En_Screen.RelationswithOtherPatterns[2])}
             {dot_content_text(AbstractFactory_En_Screen.RelationswithOtherPatterns[3])}
             {dot_content_text(AbstractFactory_En_Screen.RelationswithOtherPatterns[4])}
+
+            <ReturnButton isNext={isNext} title={'Builder'} onPress={() => navigation.navigate('Builder')}></ReturnButton>
+            <ReturnButton isNext={!isNext} title={'Factory Method'} onPress={() => navigation.navigate('Factory Method')}></ReturnButton>
+            <View style={{height:30}}></View>
 
         </ScrollView>
     );

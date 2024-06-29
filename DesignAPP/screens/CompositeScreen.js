@@ -5,7 +5,10 @@ import React, { useEffect, useState } from 'react';
 import { Composite_En } from '../assets/data/Composite';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
 import { Mainstyles } from './Style';
+import ReturnButton from './ReturnButton';
 const CompositeScreen = ({navigation, route}) => {
+    const [isNext, setIsNext] = useState(true);
+
     const content_text = (itext) =>{
         return(
             <Text style={styles.content}>
@@ -171,6 +174,10 @@ const CompositeScreen = ({navigation, route}) => {
             {num_content_text(Composite_En_Screen.RelationswithOtherPatterns[6])}
             {num_content_text(Composite_En_Screen.RelationswithOtherPatterns[7])}
             {dot_content_text(Composite_En_Screen.RelationswithOtherPatterns[8])}
+
+            <ReturnButton isNext={isNext} title={'Decorator'} onPress={() => navigation.navigate('Decorator')}></ReturnButton>
+            <ReturnButton isNext={!isNext} title={'Bridge'} onPress={() => navigation.navigate('Bridge')}></ReturnButton>
+            <View style={{height:30}}></View>
 
         </ScrollView>
     );

@@ -4,8 +4,10 @@ import React, { useEffect, useState } from 'react';
 
 import { Strategy_En } from '../assets/data/Strategy';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
+import ReturnButton from './ReturnButton';
 import { Mainstyles } from './Style';
 const StrategyScreen = ({navigation, route}) => {
+    const [isNext, setIsNext] = useState(true);
     const content_text = (itext) =>{
         return(
             <Text style={styles.content}>
@@ -79,7 +81,7 @@ const StrategyScreen = ({navigation, route}) => {
     const Strategy_En_Screen = Strategy_En;
     return (
         <ScrollView showsVerticalScrollIndicator={false} style={styles.mainContainer}>
-            {header_text('State')}
+            {header_text('Strategy')}
             <Text style={styles.header1}>
                 <Image style={styles.header_icon} source={require('../assets/icon/Intent.png')}/>
                 {header1_text('Intent')}
@@ -181,6 +183,8 @@ const StrategyScreen = ({navigation, route}) => {
             {dot_content_text(Strategy_En_Screen.RelationswithOtherPatterns[4])}
             {dot_content_text(Strategy_En_Screen.RelationswithOtherPatterns[5])}
             {dot_content_text(Strategy_En_Screen.RelationswithOtherPatterns[6])}
+            <ReturnButton isNext={isNext} title={'Template Method'} onPress={() => navigation.navigate('Template Method')}></ReturnButton>
+            <ReturnButton isNext={!isNext} title={'State'} onPress={() => navigation.navigate('State')}></ReturnButton>
 
             <View style={{height:30}}></View>
         </ScrollView>

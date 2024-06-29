@@ -5,7 +5,10 @@ import React, { useEffect, useState } from 'react';
 import { Adapter_En } from '../assets/data/Adapter';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
 import { Mainstyles } from './Style';
+import ReturnButton from './ReturnButton';
 const AdapterScreen = ({navigation, route}) => {
+    const [isNext, setIsNext] = useState(true);
+
     const content_text = (itext) =>{
         return(
             <Text style={styles.content}>
@@ -180,6 +183,10 @@ const AdapterScreen = ({navigation, route}) => {
             {dot_content_text(Adapter_En_Screen.RelationswithOtherPatterns[2])}
             {dot_content_text(Adapter_En_Screen.RelationswithOtherPatterns[3])}
             {dot_content_text(Adapter_En_Screen.RelationswithOtherPatterns[4])}
+
+            <ReturnButton isNext={isNext} title={'Bridge'} onPress={() => navigation.navigate('Bridge')}></ReturnButton>
+            <ReturnButton isNext={!isNext} title={'Singleton'} onPress={() => navigation.navigate('Singleton')}></ReturnButton>
+            <View style={{height:30}}></View>
 
         </ScrollView>
     );

@@ -5,7 +5,10 @@ import React, { useEffect, useState } from 'react';
 import { Bridge_En } from '../assets/data/Bridge';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
 import { Mainstyles } from './Style';
+import ReturnButton from './ReturnButton';
 const BridgeScreen = ({navigation, route}) => {
+    const [isNext, setIsNext] = useState(true);
+
     const content_text = (itext) =>{
         return(
             <Text style={styles.content}>
@@ -186,6 +189,9 @@ const BridgeScreen = ({navigation, route}) => {
             {dot_content_text(Bridge_En_Screen.RelationswithOtherPatterns[2])}
             {dot_content_text(Bridge_En_Screen.RelationswithOtherPatterns[3])}
 
+            <ReturnButton isNext={isNext} title={'Composite'} onPress={() => navigation.navigate('Composite')}></ReturnButton>
+            <ReturnButton isNext={!isNext} title={'Adapter'} onPress={() => navigation.navigate('Adapter')}></ReturnButton>
+            <View style={{height:30}}></View>
         </ScrollView>
     );
 };

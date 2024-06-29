@@ -5,7 +5,10 @@ import React, { useEffect, useState } from 'react';
 import { Facade_En } from '../assets/data/Facade';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
 import { Mainstyles } from './Style';
+import ReturnButton from './ReturnButton';
 const FacadeScreen = ({navigation, route}) => {
+    const [isNext, setIsNext] = useState(true);
+
     const content_text = (itext) =>{
         return(
             <Text style={styles.content}>
@@ -169,6 +172,10 @@ const FacadeScreen = ({navigation, route}) => {
             {whitedot_content_text(Facade_En_En_Screen.RelationswithOtherPatterns[5])}
             {dot_content_text(Facade_En_En_Screen.RelationswithOtherPatterns[6])}
             {dot_content_text(Facade_En_En_Screen.RelationswithOtherPatterns[7])}
+
+            <ReturnButton isNext={isNext} title={'Flyweight'} onPress={() => navigation.navigate('Flyweight')}></ReturnButton>
+            <ReturnButton isNext={!isNext} title={'Decorator'} onPress={() => navigation.navigate('Decorator')}></ReturnButton>
+            <View style={{height:30}}></View>
 
         </ScrollView>
     );

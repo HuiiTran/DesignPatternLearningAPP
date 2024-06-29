@@ -5,7 +5,10 @@ import React, { useEffect, useState } from 'react';
 import { ChainOfResponsibility_En } from '../assets/data/ChainOfResponsibility';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
 import { Mainstyles } from './Style';
+import ReturnButton from './ReturnButton';
 const ChainOfResponsibilityScreen = ({navigation, route}) => {
+    const [isNext, setIsNext] = useState(true);
+
     const content_text = (itext) =>{
         return(
             <Text style={styles.content}>
@@ -195,6 +198,9 @@ const ChainOfResponsibilityScreen = ({navigation, route}) => {
             {content_text(ChainOfResponsibility_En_Screen.RelationswithOtherPatterns[7])}
             {dot_content_text(ChainOfResponsibility_En_Screen.RelationswithOtherPatterns[8])}
             {content_text(ChainOfResponsibility_En_Screen.RelationswithOtherPatterns[9])}
+
+            <ReturnButton isNext={isNext} title={'Command'} onPress={() => navigation.navigate('Command')}></ReturnButton>
+            <ReturnButton isNext={!isNext} title={'Proxy'} onPress={() => navigation.navigate('Proxy')}></ReturnButton>
 
             <View style={{height:30}}></View>
         </ScrollView>

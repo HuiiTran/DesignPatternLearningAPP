@@ -5,7 +5,10 @@ import React, { useEffect, useState } from 'react';
 import { Proxy_En } from '../assets/data/Proxy';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
 import { Mainstyles } from './Style';
+import ReturnButton from './ReturnButton';
 const ProxyScreen = ({navigation, route}) => {
+    const [isNext, setIsNext] = useState(true);
+
     const content_text = (itext) =>{
         return(
             <Text style={styles.content}>
@@ -181,6 +184,10 @@ const ProxyScreen = ({navigation, route}) => {
             {dot_content_text(Proxy_En_Screen.RelationswithOtherPatterns[1])}
             {dot_content_text(Proxy_En_Screen.RelationswithOtherPatterns[2])}
 
+            <ReturnButton isNext={isNext} title={'Chain Of Responsibility'} onPress={() => navigation.navigate('Chain Of Responsibility')}></ReturnButton>
+            <ReturnButton isNext={!isNext} title={'Flyweight'} onPress={() => navigation.navigate('Flyweight')}></ReturnButton>
+
+            <View style={{height:30}}></View>
         </ScrollView>
     );
 };
