@@ -2,11 +2,26 @@
 import { View, Text, ScrollView, Image, TouchableOpacity, StyleSheet, FlatList,TouchableWithoutFeedback, Animated } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import StyleButton from './StyleButton';
+import ReturnButton from './ReturnButton';
 
 import { Visitor_En } from '../assets/data/Visitor';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
 import { Mainstyles } from './Style';
 const VisitorScreen = ({navigation, route}) => {
+    const [isNext, setIsNext] = useState(true);
+
+    const handlePress = () => {
+        if (isNext) {
+            // Navigate to the next page
+            console.log('Navigating to the next page');
+        } else {
+            // Return to the previous page
+            console.log('Returning to the previous page');
+        }
+        // Toggle the button state for demonstration purposes
+        setIsNext(!isNext);
+    };
+
     const content_text = (itext) =>{
         return(
             <Text style={styles.content}>
@@ -181,7 +196,8 @@ const VisitorScreen = ({navigation, route}) => {
             {dot_content_text(Visitor_En_Screen.RelationswithOtherPatterns[1])}
             {dot_content_text(Visitor_En_Screen.RelationswithOtherPatterns[2])}
 
-
+            <ReturnButton isNext={isNext} onPress={handlePress}></ReturnButton>
+            <ReturnButton isNext={!isNext} onPress={handlePress}></ReturnButton>
             <View style={{height:30}}></View>
         </ScrollView>
     );
