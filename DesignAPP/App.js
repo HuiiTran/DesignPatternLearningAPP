@@ -47,6 +47,7 @@ import ObserverScreen from './screens/ObserverScreen';
 import StateScreen from './screens/StateScreen';
 import StrategyScreen from './screens/StrategyScreen';
 import TemplateMethodScreen from './screens/TemplateMethodScreen';
+import VisitorScreen from './screens/VisitorScreen';
 
 import Home from './screens/Home';
 import Catalog from './screens/Catalog';
@@ -124,6 +125,7 @@ const App = ({navigation, route}) => {
         <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="State" component={StateScreen} />
         <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Strategy" component={StrategyScreen} />
         <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Template Method" component={TemplateMethodScreen} />
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Visitor" component={VisitorScreen} />
 
 
       </Drawer.Navigator>
