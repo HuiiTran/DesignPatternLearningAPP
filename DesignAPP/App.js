@@ -25,6 +25,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import Accordion from './screens/Accordion';
 
 import SingletonScreen from './screens/SingletonScreen';
 import FactoryMethodScreen from './screens/FactoryMethodScreen';
@@ -57,6 +58,7 @@ import ClassificationScreen from './screens/ClassificationScreen';
 import HistoryofpatternsScreen from './screens/HistoryofpatternsScreen';
 import CriticismofPatternsScreen from './screens/CriticismofPatternsScreen';
 
+import DrawerContent from './screens/DrawerContent';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerToggleButton  } from '@react-navigation/drawer';
 
@@ -87,7 +89,7 @@ const App = ({navigation, route}) => {
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home"
       backBehavior="history"
-      drawerContent={props => <CustomDrawer {...props} />}
+      drawerContent={props => <DrawerContent {...props} />}
        screenOptions={{
         drawerPosition: 'right',
         drawerActiveBackgroundColor: '#bc463a',

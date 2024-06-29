@@ -7,6 +7,7 @@ import ReturnButton from './ReturnButton';
 import { Visitor_En } from '../assets/data/Visitor';
 import { PinchGestureHandler, State } from 'react-native-gesture-handler';
 import { Mainstyles } from './Style';
+import Accordion from './Accordion';
 const VisitorScreen = ({navigation, route}) => {
     const [isNext, setIsNext] = useState(true);
 
@@ -198,11 +199,19 @@ const VisitorScreen = ({navigation, route}) => {
 
             <ReturnButton isNext={isNext} onPress={handlePress}></ReturnButton>
             <ReturnButton isNext={!isNext} onPress={handlePress}></ReturnButton>
+            
+            
+            <Accordion data={data} />
             <View style={{height:30}}></View>
+
         </ScrollView>
     );
 };
-
+const data = [
+    { title: 'Drawer 1', navigateTo: 'Drawer1' },
+    { title: 'Drawer 2', navigateTo: 'Drawer2' },
+    { title: 'Drawer 3', navigateTo: 'Drawer3' },
+];
 const styles = Mainstyles;
 
 export default VisitorScreen;

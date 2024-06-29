@@ -15,7 +15,7 @@ const ReturnButton = ({isNext, onPress}) => {
 
 const styles = StyleSheet.create({
   button:{
-    width:200,
+    width:'70%',
     borderRadius:6,
     height:50,
     justifyContent:'center'
