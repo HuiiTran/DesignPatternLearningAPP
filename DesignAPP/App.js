@@ -43,6 +43,7 @@ import FlyweightScreen from './screens/FlyweightScreen';
 import ProxyScreen from './screens/ProxyScreen';
 import MediatorScreen from './screens/MediatorScreen';
 import MementoScreen from './screens/MementoScreen';
+import ObserverScreen from './screens/ObserverScreen';
 
 import Home from './screens/Home';
 import Catalog from './screens/Catalog';
@@ -114,6 +115,11 @@ const App = ({navigation, route}) => {
         <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Chain Of Responsibility" component={ChainOfResponsibilityScreen} />
         <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Command" component={CommandScreen} />
         <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Iterator" component={IteratorScreen} />
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Mediator" component={MediatorScreen} />
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Memento" component={MementoScreen} />
+        <Drawer.Screen options={{drawerItemStyle: { marginLeft: 35 },headerTitle: '',headerTitleAlign: 'center', headerStyle:{backgroundColor: '#d04b3e'}, headerTintColor: '#fff',}} name="Observer" component={ObserverScreen} />
+
+
       </Drawer.Navigator>
     </NavigationContainer>
   );
