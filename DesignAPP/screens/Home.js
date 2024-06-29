@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { View, Text, ScrollView, Image, TouchableOpacity, StyleSheet, FlatList,TouchableWithoutFeedback, Animated, ImageComponent } from 'react-native';
+import { View, Linking, Text, ScrollView, Image, TouchableOpacity, StyleSheet, FlatList,TouchableWithoutFeedback, Animated, ImageComponent } from 'react-native';
 import React, { useEffect, useState } from 'react';
 
 import { Home_En } from '../assets/data/Home';
@@ -44,6 +44,9 @@ const HomeScreen = ({navigation, route}) => {
             </View>
         );
     };
+    const openURL = (url) => {
+        Linking.openURL(url).catch((err) => console.error('An error occurred', err));
+      }
     const Home_En_Screen = Home_En;
     return(
         <ScrollView showsVerticalScrollIndicator={false} style={styles.mainContainer}>
@@ -69,7 +72,7 @@ const HomeScreen = ({navigation, route}) => {
             </Text>
             {image_content(Home_En_Screen.Image[2])}
             {content_text(Home_En_Screen.BenefitsOfPatterns[0])}
-            <StyleButton buttonText={'More about the benefits >>'}></StyleButton>
+            <StyleButton buttonText={'More about the benefits >>'} onPress={() => navigation.navigate('BenefitsofPatternsScreen')}></StyleButton>
 
             <Text style = {styles.header1}>
                 <Image style={styles.header_icon} source={require('../assets/icon/classification.png')}/>
@@ -77,7 +80,7 @@ const HomeScreen = ({navigation, route}) => {
             </Text>
             {image_content(Home_En_Screen.Image[3])}
             {content_text(Home_En_Screen.Classification[0])}
-            <StyleButton buttonText={'More about the categories >>'}></StyleButton>
+            <StyleButton buttonText={'More about the categories >>' } onPress={() => navigation.navigate('ClassificationScreen')}></StyleButton>
 
             <Text style = {styles.header1}>
                 <Image style={styles.header_icon} source={require('../assets/icon/hourglass.png')}/>
@@ -85,7 +88,7 @@ const HomeScreen = ({navigation, route}) => {
             </Text>
             {image_content(Home_En_Screen.Image[4])}
             {content_text(Home_En_Screen.HistoryOfPatterns[0])}
-            <StyleButton buttonText={'More about the history >>'}></StyleButton>
+            <StyleButton buttonText={'More about the history >>'} onPress={() => navigation.navigate('HistoryofpatternsScreen')}></StyleButton>
 
             <Text style = {styles.header1}>
                 <Image style={styles.header_icon} source={require('../assets/icon/brokenheart.png')}/>
@@ -93,7 +96,7 @@ const HomeScreen = ({navigation, route}) => {
             </Text>
             {image_content(Home_En_Screen.Image[5])}
             {content_text(Home_En_Screen.CriticismOfPatterns[0])}
-            <StyleButton buttonText={'More about the criticism >>'}></StyleButton>
+            <StyleButton buttonText={'More about the criticism >>'} onPress={() => navigation.navigate('CriticismofPatternsScreen')}></StyleButton>
 
             <Text style = {styles.header1}>
                 <Image style={styles.header_icon} source={require('../assets/icon/star.png')}/>
@@ -101,7 +104,7 @@ const HomeScreen = ({navigation, route}) => {
             </Text>
             {image_content(Home_En_Screen.Image[6])}
             {content_text(Home_En_Screen.DesignPattern[0])}
-            <StyleButton buttonText={'Learn more about the book'}></StyleButton>
+            <StyleButton buttonText={'Learn more about the book'} onPress={()=>{openURL('https://refactoring.guru/design-patterns/book')}}></StyleButton>
 
             <View style={{height:30}}></View>
 
