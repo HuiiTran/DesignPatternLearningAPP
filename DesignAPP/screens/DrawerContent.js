@@ -1,10 +1,17 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import { View, StyleSheet, ScrollView, Text } from 'react-native';
 import Accordion from './Accordion';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const HomeData =[
-    {title: 'Home' , navigateTo:'Home'}
+    {title: 'Home' , navigateTo:'Home'},
+    {title: 'What is Design Pattern' , navigateTo:'WhatisDesignPatternScreen'},
+    {title: 'Benefit sof Patterns' , navigateTo:'BenefitsofPatternsScreen'},
+    {title: 'Classification' , navigateTo:'ClassificationScreen'},
+    {title: 'History of patterns' , navigateTo:'HistoryofpatternsScreen'},
+    {title: 'Criticism of Patterns' , navigateTo:'CriticismofPatternsScreen'},
+    
 ];
 
 const CatalogData =[
@@ -47,11 +54,13 @@ const DrawerContent = (props, navigation) => {
         <ScrollView>
             <View style={styles.container}>
                 <Text>ASLKDJALSKDJ</Text>
-                {/* <TouchableOpacity style={styles.touchable} onPress={() =>
-                            navigation.navigate('Home')
+                {/* <TouchableOpacity style={styles.touchable} 
+                onPress={() =>
+                    navigation.navigate('CriticismofPatternsScreen')
                         }>
                     
                 </TouchableOpacity> */}
+                <Accordion accordionTitle="Home" data={HomeData} />
                 <Accordion accordionTitle="Catalog" data={CatalogData} />
                 <Accordion accordionTitle="Creational Patterns" data={CreationalPatternsData} />
                 <Accordion accordionTitle="Structural Patterns" data={StructuralPatternsData} />

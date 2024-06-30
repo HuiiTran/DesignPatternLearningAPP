@@ -204,7 +204,7 @@ const CommandScreen = ({navigation, route}) => {
             {dot_content_text(Command_En_Screen.RelationswithOtherPatterns[12])}
 
             <ReturnButton isNext={isNext} title={'Iterator'} onPress={() => navigation.navigate('Iterator')}></ReturnButton>
-            <ReturnButton isNext={!isNext} title={'Chain Of Responsibility'} onPress={() => navigation.navigate('Chain Of Responsibility')}></ReturnButton>
+            <ReturnButton isNext={!isNext} title={'COR'} onPress={() => navigation.navigate('Chain Of Responsibility')}></ReturnButton>
 
             <View style={{height:30}}></View>
         </ScrollView>

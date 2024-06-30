@@ -184,7 +184,7 @@ const ProxyScreen = ({navigation, route}) => {
             {dot_content_text(Proxy_En_Screen.RelationswithOtherPatterns[1])}
             {dot_content_text(Proxy_En_Screen.RelationswithOtherPatterns[2])}
 
-            <ReturnButton isNext={isNext} title={'Chain Of Responsibility'} onPress={() => navigation.navigate('Chain Of Responsibility')}></ReturnButton>
+            <ReturnButton isNext={isNext} title={'COR'} onPress={() => navigation.navigate('Chain Of Responsibility')}></ReturnButton>
             <ReturnButton isNext={!isNext} title={'Flyweight'} onPress={() => navigation.navigate('Flyweight')}></ReturnButton>
 
             <View style={{height:30}}></View>
